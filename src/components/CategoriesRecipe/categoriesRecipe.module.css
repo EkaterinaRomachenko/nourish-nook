@@ -1,0 +1,33 @@
+.categoriesRecipe {
+  display: flex;
+  flex: 1 1;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.categoriesRecipeItem {
+  padding: 13px 30px;
+  border-radius: 30px;
+  margin-right: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  font-size: 14px;
+  color: rgb(1, 92, 1);
+  font-family: 'Roboto', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  list-style: none;
+  text-decoration: none;
+}
+
+.categoriesRecipeItem:hover {
+  opacity: 0.8;
+  transition: 0.3s;
+  background-color: rgb(1, 92, 1);
+  color: rgb(255, 255, 255);
+  transition: all 0.3s ease;
+}

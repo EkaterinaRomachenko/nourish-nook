@@ -1,0 +1,97 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 50px 20px 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.133);
+  position: relative;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logoText {
+  font-size: 30px;
+  margin-left: 10px;
+  font-weight: 400;
+  color: rgb(1, 92, 1);
+  font-family: 'Playfair Display', serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+}
+
+.menu li {
+  margin-left: 30px;
+}
+
+.menuItem {
+  font-size: 20px;
+  font-weight: 400;
+  color: black;
+  font-family: 'Playfair Display', serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.menuItem:hover {
+  color: rgb(1, 92, 1);
+  transition: 0.3s;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+/* 
+.userContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.userIcon {
+  width: 30px;
+  height: 30px;
+  color: rgb(1, 92, 1);
+}
+
+.userName {
+  font-size: 20px;
+  font-weight: 400;
+  color: black;
+  font-family: 'Playfair Display', serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+} */
+
+
+.button {
+  background-color: rgb(1, 92, 1);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 0.8;
+  transition: 0.3s;
+}

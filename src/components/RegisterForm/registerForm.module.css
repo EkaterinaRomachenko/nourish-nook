@@ -1,0 +1,95 @@
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  list-style: none;
+  text-decoration: none;
+  gap: 20px;
+  padding: 20px 50px 20px 50px;
+  position: relative;
+}
+
+.registerInputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.termsContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.termsInput {
+  width: 20px;
+  height: 20px;
+}
+
+.terms {
+  color: rgba(0, 0, 0, 1);
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.termsLink {
+  color: rgb(170, 7, 170);
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.termsLink:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.registerForm input {
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  border: none;
+  outline: none;
+  background-color: rgba(244, 243, 243, 1);
+  border-radius: 5px;
+  padding: 15px;
+  color: rgba(0, 0, 0, 1);
+}
+
+.registerButton {
+  background-color: rgb(1, 92, 1);
+  color: rgba(244, 243, 243, 1);
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.registerButton:hover {
+  opacity: 0.8;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  text-decoration: none;
+}

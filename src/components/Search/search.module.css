@@ -1,0 +1,35 @@
+.search {
+  display: flex;
+  flex: 1 1;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.searchIcon {
+  width: 30px;
+  height: 30px;
+  color: rgb(1, 92, 1);
+  cursor: pointer;
+}
+
+.searchIcon:hover {
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.searchInput {
+  outline: none;
+  font-size: 18px;
+  font-weight: 400;
+  color: grey;
+  width: 400px;
+  height: 30px;
+  padding-left: 10px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  font-family: 'Playfair Display', serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
