@@ -11,14 +11,14 @@ export const validateForm = (formData: {
     email: string;
     password: string;
     confirmPassword: string;
-    terms: boolean ;
+    terms: string;
   } = {
     username: '',
     email: '',
     password: '',
     confirmPassword: '',
-    terms: false, 
-  }
+    terms: '',
+  };
   if (!formData.username) {
     errors.username = 'Имя обязательно!';
   }
@@ -36,8 +36,9 @@ export const validateForm = (formData: {
     errors.confirmPassword = 'Пароли не совпадают!';
   }
   if (!formData.terms) {
-    errors.terms = false;
+    errors.terms = 'Дайте согласие на обработку персональных данных!';
     console.log(errors.terms);
   }
   return errors;
 };
+

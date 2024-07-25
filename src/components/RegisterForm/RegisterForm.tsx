@@ -23,62 +23,34 @@ const RegisterForm: FC<RegisterFormProps> = ({ onClose }) => {
     terms: boolean;
   }>(initialState);
 
-  const [errors, setErrors] = useState({ ...initialState });
+  const [errors, setErrors] = useState({
+    username: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+    terms: '',
+  });
 
-  // фукнция для обработки изменений
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    // создаем новый объект , копиируя старый и добавляя новое свойство
-    setFormData({ ...formData, [name]: value });
+    const { name, value, type, checked } = e.target;
+    setFormData({ ...formData, [name]: type === 'checkbox' ? checked : value });
   };
 
-  // фукнция для обработки изменений
-  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, checked } = e.target;
-    // создаем новый объект , копиируя старый и добавляя новое свойство
-    setFormData({ ...formData, [name]: checked });
-  };
-
-  // функция для отправки формы
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement | HTMLButtonElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log(formData);
     const validationErrors = validateForm(formData);
-    if (validateForm(formData)) {
+    const { username, email, password, confirmPassword, terms } = formData;
+    if (username && email && password && confirmPassword && terms) {
+      // Отправка формы
       console.log('Форма успешно отправлена!', formData);
-      // Очистка формы
       setFormData(initialState);
-      // Закрытие модального окна
+      setErrors(errors);
       onClose();
     } else {
       // Валидация ошибок
-      setErrors({
-        ...validationErrors,
-        username: validationErrors.username ?? '',
-        email: validationErrors.email ?? '',
-        password: validationErrors.password ?? '',
-        confirmPassword: validationErrors.confirmPassword ?? '',
-        terms: validationErrors.terms ?? '',
-      });
+      setErrors(validationErrors);
     }
-    // const validationErrors = validateForm(formData);
-    // if (Object.keys(validationErrors).length === 0) {
-    //   // Отправка формы
-    //   console.log('Форма успешно отправлена!', formData);
-    //   // Очистка формы
-    //   setFormData(initialState);
-    //   // Закрытие модального окна
-    //   onClose();
-    // } else {
-    //   // Валидация ошибок
-    //   setErrors({
-    //     ...validationErrors,
-    //     username: validationErrors.username ?? '',
-    //     email: validationErrors.email ?? '',
-    //     password: validationErrors.password ?? '',
-    //     confirmPassword: validationErrors.confirmPassword ?? '',
-    //     terms: validationErrors.terms ?? '',
-    //   });
-    // }
   };
 
   return (
@@ -91,6 +63,7 @@ const RegisterForm: FC<RegisterFormProps> = ({ onClose }) => {
           name="username"
           type="text"
           placeholder="Ваше имя"
+          value={formData.username}
           onChange={handleChange}
         />
         {errors.username && <p className={styles.error}>{errors.username}</p>}
@@ -102,6 +75,7 @@ const RegisterForm: FC<RegisterFormProps> = ({ onClose }) => {
           id="email"
           name="email"
           type="email"
+          value={formData.email}
           placeholder="name@mail.com"
           onChange={handleChange}
         />
@@ -115,37 +89,42 @@ const RegisterForm: FC<RegisterFormProps> = ({ onClose }) => {
           name="password"
           type="password"
           placeholder="Не менее 6 символов"
+          value={formData.password}
           onChange={handleChange}
         />
         {errors.password && <p className={styles.error}>{errors.password}</p>}
       </div>
       <div className={styles.registerInputContainer}>
-        <label htmlFor="password">Подтвердите пароль *</label>
+        <label htmlFor="confirmPassword">Подтвердите пароль *</label>
         <input
+          id="confirmPassword"
           className={styles.registerInput}
           name="confirmPassword"
           type="password"
           placeholder="Не менее 6 символов"
+          value={formData.confirmPassword}
           onChange={handleChange}
         />
         {errors.confirmPassword && <p className={styles.error}>{errors.confirmPassword}</p>}
       </div>
       <div className={styles.termsContainer}>
-        <input
-          className={styles.termsInput}
-          type="checkbox"
-          name="terms"
-          id="terms"
-          aria-describedby="terms"
-          checked={formData.terms}
-          onChange={handleCheckboxChange}
-        />
-        <label htmlFor="terms" className={styles.terms}>
-          Я согласен с{' '}
-          <a href="#" className={styles.termsLink}>
-            Условиями использования
-          </a>
-        </label>
+        <div className={styles.termsInputContainer}>
+          <input
+            className={styles.termsInput}
+            type="checkbox"
+            name="terms"
+            id="terms"
+            aria-describedby="terms"
+            checked={formData.terms}
+            onChange={handleChange}
+          />
+          <label htmlFor="terms" className={styles.terms}>
+            Я согласен с{' '}
+            <a href="#" className={styles.termsLink}>
+              Условиями использования
+            </a>
+          </label>
+        </div>
         {errors.terms && <p className={styles.error}>{errors.terms}</p>}
       </div>
       <button className={styles.registerButton} type="submit">
