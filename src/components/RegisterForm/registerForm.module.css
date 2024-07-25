@@ -19,6 +19,12 @@
 
 .termsContainer {
   display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.termsInputContainer {
+  display: flex;
   align-items: center;
   gap: 10px;
 }
