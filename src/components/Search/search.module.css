@@ -22,12 +22,12 @@
   outline: none;
   font-size: 18px;
   font-weight: 400;
-  color: grey;
+  color: rgb(1, 92, 1);
   width: 400px;
   height: 30px;
   padding-left: 10px;
   border-radius: 5px;
-  border: 1px solid grey;
+  border: 1px solid rgb(1, 92, 1);
   font-family: 'Playfair Display', serif;
   font-optical-sizing: auto;
   font-weight: 400;

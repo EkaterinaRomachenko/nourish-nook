@@ -37,7 +37,6 @@ export const validateForm = (formData: {
   }
   if (!formData.terms) {
     errors.terms = 'Дайте согласие на обработку персональных данных!';
-    console.log(errors.terms);
   }
   return errors;
 };
